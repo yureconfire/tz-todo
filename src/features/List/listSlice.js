@@ -13,7 +13,9 @@ const listSlice = createSlice({
     isLoading: false,
     data: [],
     isError: false,
+    isCompleted: false,
   },
+  //Change state with Thunk(async)
   extraReducers: (builder) => {
     builder.addCase(fetchTodos.pending, (state) => {
       state.isLoading = true;
@@ -27,6 +29,7 @@ const listSlice = createSlice({
       state.isError = true;
     });
   },
+  //Change states action functions
   reducers: {
     addTodo(state, action) {
       state.isLoading = true;
@@ -36,10 +39,24 @@ const listSlice = createSlice({
     deleteTodo(state, action) {
       state.data = state.data.filter((todo) => todo.id !== action.payload);
     },
-    editTodo(state, action) {},
+    editTodo(state, action) {
+      state.data = state.data.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, title: action.payload.value }
+          : todo
+      );
+    },
+    completeTodo(state, action) {
+      state.data = state.data.map((todo) =>
+        todo.id === action.payload
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      );
+    },
   },
 });
 
-export const { addTodo, deleteTodo, editTodo } = listSlice.actions;
+export const { addTodo, deleteTodo, editTodo, completeTodo } =
+  listSlice.actions;
 
 export default listSlice.reducer;

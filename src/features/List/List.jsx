@@ -27,7 +27,7 @@ function List() {
         </div>
       )}
       {data?.map((todo) => (
-        <ListItem todo={todo} key={todo.id} />
+        <ListItem list={data} todo={todo} key={todo.id} />
       ))}
     </ul>
   );

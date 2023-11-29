@@ -7,13 +7,12 @@ import generateRandomId from "../../utils/generateRandomId";
 
 function AddListItem() {
   const [todoForm, setTodoForm] = useState(""); //Form state
-
   const dispatch = useDispatch();
 
   //Add new todo
   const handleSubmit = function (e) {
-    e.preventDefault();
-    if (!todoForm) return; //Protect empty form
+    e.preventDefault(); //Disable page update
+    if (!todoForm) return; //Protect if form is empty
 
     //Create new todo object
     const newTodo = {
@@ -22,6 +21,7 @@ function AddListItem() {
       title: todoForm,
       completed: false,
     };
+
     dispatch(addTodo(newTodo)); //Add new todo object to array
     setTodoForm(""); //Clear form
   };
