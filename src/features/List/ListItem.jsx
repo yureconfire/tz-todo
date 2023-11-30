@@ -34,8 +34,10 @@ function ListItem({ todo }) {
     <>
       <li
         className={`${
-          todo.completed ? "bg-green-300 line-through" : "bg-indigo-400"
-        } p-6  rounded-lg flex justify-between text-gray-50 font-semibold text-xl `}
+          todo.completed
+            ? "bg-green-400 line-through hover:bg-green-500 transition-all"
+            : "bg-indigo-400"
+        } p-6  rounded-lg flex justify-between text-gray-50 font-semibold text-xl hover:bg-indigo-500 transition-all`}
       >
         <p>
           <button onClick={toggleCompleted}>
