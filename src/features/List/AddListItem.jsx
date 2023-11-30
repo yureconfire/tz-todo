@@ -28,7 +28,7 @@ function AddListItem() {
 
   return (
     <form
-      className="flex gap-4 items-center justify-center mt-12"
+      className="flex gap-4 items-center justify-center mt-8 ml-2 mr-2 sm:mt-12"
       onSubmit={handleSubmit}
     >
       <input
@@ -38,7 +38,13 @@ function AddListItem() {
         value={todoForm}
         onChange={(e) => setTodoForm(e.target.value)}
       />
-      {todoForm ? <Button>Add new todo</Button> : ""}
+      {todoForm ? (
+        <Button>
+          <span className="">Add new todo</span>
+        </Button>
+      ) : (
+        ""
+      )}
     </form>
   );
 }
