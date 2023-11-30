@@ -36,8 +36,8 @@ function ListItem({ todo }) {
         className={`${
           todo.completed
             ? "bg-green-400 hover:bg-green-500 transition-all"
-            : "bg-indigo-400"
-        } p-4 sm:p-6  rounded-lg flex justify-between text-gray-50 font-semibold text-md sm:text-xl hover:bg-indigo-500 transition-all`}
+            : "bg-indigo-400 hover:bg-indigo-500"
+        } p-4 sm:p-6  rounded-lg flex justify-between text-gray-50 font-semibold text-md sm:text-xl  transition-all`}
       >
         <div className="flex gap-1">
           <button onClick={toggleCompleted}>
