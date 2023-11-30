@@ -12,6 +12,8 @@ const listSlice = createSlice({
   initialState: {
     isLoading: false,
     data: [],
+    dataPerPage: 10,
+    currentPage: 1,
     isError: false,
     isCompleted: false,
   },
@@ -29,7 +31,7 @@ const listSlice = createSlice({
       state.isError = true;
     });
   },
-  //Change states action functions
+  //Action functions
   reducers: {
     addTodo(state, action) {
       state.isLoading = true;
@@ -53,10 +55,34 @@ const listSlice = createSlice({
           : todo
       );
     },
+    clearList(state) {
+      state.data = [];
+    },
+    onNavigateNext(state) {
+      state.currentPage++;
+    },
+    onNavigatePrev(state) {
+      state.currentPage--;
+    },
+    onChangeTodosPerpage(state, action) {
+      state.dataPerPage = action.payload;
+    },
+    onClickCurrentPage(state, action) {
+      state.currentPage = action.payload;
+    },
   },
 });
 
-export const { addTodo, deleteTodo, editTodo, completeTodo } =
-  listSlice.actions;
+export const {
+  addTodo,
+  deleteTodo,
+  editTodo,
+  completeTodo,
+  clearList,
+  onNavigateNext,
+  onNavigatePrev,
+  onChangeTodosPerpage,
+  onClickCurrentPage,
+} = listSlice.actions;
 
 export default listSlice.reducer;
