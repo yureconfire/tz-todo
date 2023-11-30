@@ -46,7 +46,7 @@ function Pagination({ pages, currentPage, totalPages }) {
           Page {currentPage} of {totalPages}
         </span>
       </div>
-      <div className="flex justify-center items-center mb-12">
+      <div className="flex justify-center items-center mb-12 gap-1">
         <PaginationButton onClick={navigatePrev} direction="mr">
           <BsChevronLeft size="1.5em" className="inline" />
         </PaginationButton>
@@ -59,7 +59,7 @@ function Pagination({ pages, currentPage, totalPages }) {
                 onClick={() => handleCurrentPage.call(null, p)}
                 className={`${
                   p === currentPage ? "bg-indigo-500 text-white" : ""
-                } relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1  ring-gray-300 hover:bg-indigo-500 hover:text-white focus:z-20 focus:outline-offset-0 cursor-pointer transition-all`}
+                } relative inline-flex items-center px-4 py-[8.5px] text-sm font-semibold text-gray-900 ring-1  ring-gray-300 hover:bg-indigo-500 hover:text-white focus:z-20 focus:outline-offset-0 cursor-pointer transition-all`}
               >
                 {p}
               </span>
