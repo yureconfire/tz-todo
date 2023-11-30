@@ -9,11 +9,12 @@ import Pagination from "../Pagination/Pagination";
 
 function List() {
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.list.isLoading);
   const data = useSelector((state) => state.list.data);
+  const isLoading = useSelector((state) => state.list.isLoading);
   const dataPerPage = useSelector((state) => state.list.dataPerPage);
   const currentPage = useSelector((state) => state.list.currentPage);
 
+  //For pagination
   const totalPages = Math.ceil(data.length / dataPerPage);
   const pages = [...Array(totalPages + 1).keys()].slice(1);
   const indexOfLastPage = currentPage * dataPerPage;

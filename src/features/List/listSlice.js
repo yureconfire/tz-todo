@@ -57,6 +57,7 @@ const listSlice = createSlice({
     },
     clearList(state) {
       state.data = [];
+      state.currentPage = 1;
     },
     onNavigateNext(state) {
       state.currentPage++;

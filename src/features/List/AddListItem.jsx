@@ -40,7 +40,7 @@ function AddListItem() {
       />
       {todoForm ? (
         <Button>
-          <span className="">Add new todo</span>
+          <span className="text-sm">Add new todo</span>
         </Button>
       ) : (
         ""

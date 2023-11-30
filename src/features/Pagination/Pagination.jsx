@@ -1,12 +1,13 @@
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
+
 import {
   onClickCurrentPage,
   onNavigateNext,
   onNavigatePrev,
 } from "../../features/List/listSlice";
 import PaginationButton from "../../ui/PaginationButton/PaginationButton";
-import { useState } from "react";
 
 function Pagination({ pages, currentPage, totalPages }) {
   const [pageNumberLimit] = useState(5);
