@@ -34,7 +34,7 @@ function List() {
 
   return (
     <>
-      <ul className="flex flex-col gap-6 m-12 ">
+      <ul className="flex flex-col gap-6 m-6 sm:m-12 ">
         {data.length ? (
           <div className="flex flex-col items-center gap-16">
             <Button onClick={() => clearTodoList()}>Clear list</Button>
@@ -46,7 +46,7 @@ function List() {
                 <BsPlusCircle /> Fetch some todo&apos;s
               </span>
             </Button>
-            <p className="text-4xl">Or create new 😉</p>
+            <p className="sm:text-4xl text-2xl">Or create new 😉</p>
           </div>
         )}
 

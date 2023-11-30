@@ -9,7 +9,7 @@ import PaginationButton from "../../ui/PaginationButton/PaginationButton";
 import { useState } from "react";
 
 function Pagination({ pages, currentPage, totalPages }) {
-  const [pageNumberLimit, setPageNumberLimit] = useState(5);
+  const [pageNumberLimit] = useState(5);
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
   const dispatch = useDispatch();
@@ -48,7 +48,6 @@ function Pagination({ pages, currentPage, totalPages }) {
       <div className="flex justify-center items-center mb-12">
         <PaginationButton onClick={navigatePrev} direction="mr">
           <BsChevronLeft size="1.5em" className="inline" />
-          Prev
         </PaginationButton>
 
         {pages.map((p) => {
@@ -69,7 +68,6 @@ function Pagination({ pages, currentPage, totalPages }) {
           }
         })}
         <PaginationButton onClick={navigateNext} direction="ml">
-          Next
           <BsChevronRight size="1.5em" className="inline" />
         </PaginationButton>
       </div>

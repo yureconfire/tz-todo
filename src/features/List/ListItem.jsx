@@ -35,23 +35,23 @@ function ListItem({ todo }) {
       <li
         className={`${
           todo.completed
-            ? "bg-green-400 line-through hover:bg-green-500 transition-all"
+            ? "bg-green-400 hover:bg-green-500 transition-all"
             : "bg-indigo-400"
-        } p-6  rounded-lg flex justify-between text-gray-50 font-semibold text-xl hover:bg-indigo-500 transition-all`}
+        } p-4 sm:p-6  rounded-lg flex justify-between text-gray-50 font-semibold text-md sm:text-xl hover:bg-indigo-500 transition-all`}
       >
-        <p>
+        <div className="flex gap-1">
           <button onClick={toggleCompleted}>
             {todo.completed ? "✅" : "❌"}
           </button>
-          {todo.title}
-        </p>
+          <div>{todo.title}</div>
+        </div>
 
         <div className="flex gap-3">
           <button onClick={() => setIsEditing((e) => !e)}>
-            <BsPencilFill className="cursor-pointer text-2xl" />
+            <BsPencilFill className="cursor-pointer text-xl sm:text-2xl" />
           </button>
           <button onClick={handleDelete}>
-            <BsFillTrashFill className="cursor-pointer text-2xl" />
+            <BsFillTrashFill className="cursor-pointer text-xl sm:text-2xl" />
           </button>
         </div>
       </li>
